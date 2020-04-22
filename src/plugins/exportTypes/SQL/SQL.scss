@@ -1,0 +1,25 @@
+.row {
+	display: flex;
+	margin: 12px 0;
+	&>div {
+		flex: 1;
+
+		&>label {
+			height: 20px;
+			display: block;
+		}
+	}
+}
+
+.batchSize {
+	display: flex;
+	align-items: center;
+
+	> span {
+		height: 38px;
+		margin-right: 4px;
+	}
+	> label {
+		margin-right: 4px;
+	}
+}

@@ -1,15 +1,17 @@
 # generatedata.com
 
-[![Build Status](https://travis-ci.org/benkeen/generatedata.png?branch=master)](https://travis-ci.org/benkeen/generatedata)
+[![Build Status](https://travis-ci.org/benkeen/generatedata.svg?branch=master)](https://travis-ci.org/benkeen/generatedata)
+[![Coverage Status](https://coveralls.io/repos/github/benkeen/generatedata/badge.svg?branch=master)](https://coveralls.io/github/benkeen/generatedata?branch=master)
 
 This is the repo for the downloadable version of [generatedata.com](http://www.generatedata.com). The 
-script is basically an *engine* to generate any sort of random data in any format. It currently comes with 30 or 
-so *Data Types* (types of data it generates), plus 8 *Export Types* (formats for the data), but it can be extended 
-in any way you want. Check out the [developer documentation](http://benkeen.github.io/generatedata/developer.html)
-for that. If you need to generate random data programmatically rather than manually via the UI, you can use the [REST API](http://benkeen.github.io/generatedata/api.html).
+script is essentially an *engine* to generate any sort of random data in any format. It currently comes with 30 or 
+so *Data Types* (types of data it generates), 8 *Export Types* (formats for the data), plus around 30 data sets for specific countries (city names, regions etc). But more importantly it can be extended in any way you want. Check out the [developer documentation](http://benkeen.github.io/generatedata/developer.html)
+for more information on that. If you need to generate random data programmatically rather than manually via the UI, you can use the [REST API](http://benkeen.github.io/generatedata/api.html).
 
-Generally the trunk is pretty stable, but it's not guaranteed. If you're downloading the script, get the most recent 
+The master branch now contains the incomplete v4 rewrite, so if you're downloading the script, get the most recent 
 tag: https://github.com/benkeen/generatedata/releases
+
+*This README file still contains information about the v3 code. It will stay that way until v4 is in alpha stage.*
 
 ## Requirements
 - PHP 5.3 or any later version of PHP 5.
@@ -24,6 +26,16 @@ Installation is really, really simple. I deliberately wrote the script to be as 
 require additional PHP/Server configuration when setting it up. That said, it *does* require PHP 5.3.0 or later. See 
 the documentation for more info.
 
+## `master` = v4 rewrite
+
+The master branch of this repo now contains the ongoing work for the v4 rewrite. The generatedata.com site, the 
+documentation and everything else is for up to the v3 branch. You can find that code in the `v3` branch. 
+
+Although I'm no longer working on that branch, PRs and bug fixes are very welcome! Just branch off `v3` and put 
+your PRs in against that.
+
+v4 is dropping PHP and MySQL and re-writing the entire script in node. This script will eventually become available as a node package which you can use in your own packages to generate your own code programmatically, but it will continue to offer the REST API and UI for constructing and generating the data sets. 
+
 
 ## Pre-packaged solutions
 
@@ -36,14 +48,9 @@ of this script.
 
 
 ### Vagrant 
+
 There's also a pre-packaged Vagrant solution [found here](https://github.com/benkeen/generatedata-vagrant),
 courtesy of Daragh Courtney.
-
-
-# Test Coverage
-
-Test coverage is pretty weak right now! I'm in the midst of adding phpunit tests and integrating it with Travis, but it's
-going to be a little hairy for a while just yet.
 
 ## To-Do
 
@@ -58,26 +65,25 @@ contributors agree that all code is released under this license.
 ## Contributors
 
 In addition to the many fine folk who submit bug reports, a big thanks to the following for their help extending the script:
-
-- [aevans84](https://github.com/aevans84) - Precision option for Normal Distribution (3.2.5)
-- [Tony OHagan](https://github.com/tohagan) - generation of complex JSON structures (3.2.5)
-- [Fabrice Marquès](https://github.com/fmarques56) - French business numbers (SIRET/SIREN) (3.2.3)
-- [Daragh Courtney](https://github.com/daraghc) - [Data Generator Vagrant repo](https://github.com/benkeen/generatedata-vagrant)
-- [Zhao Yang](https://github.com/jptiancai) - Chinese language file (3.1.4)
-- [Anton Nizhegorodov](https://github.com/an1zhegorodov) - Batch size SQL export option (3.1.3)
-- Zeeshan Shaikh - PAN, PIN, CVV, Track 1 and 2 Data Types (3.1.1)
-- [Ap.Mathu](https://github.com/apmuthu) - SQL Export Type updates (INSERT IGNORE)
-- [Manu Ullas](https://github.com/unullmass) - compression option for downloads (3.0.9)
-- [rsicher1](https://github.com/rsicher1) - credit card Data Type (3.0.9)
-- Joeri Noort - IBAN numbers (3.0.8)
-- [Michel Roca](https://github.com/mRoca) - Full and correct French translation (3.0.7)
-- Marco Corona - LDIF Export Type added (3.0.7)
-- [Andre Fortin](https://github.com/twindual) - original Costa Rica Country plugin & Phone-Regional Data Type (3.0.6)
-- [Marcello Verona](https://github.com/marciuz) - Italy Country plugin (3.0.4)
-- [Roberto Aragón](https://github.com/robarago), Charo Baena - Spanish translation & Country plugin (3.0.2)
-- [Kent Chenery](https://github.com/kchenery) - MS SQL plugin (3.0.1)
+https://github.com/benkeen/generatedata/graphs/contributors
 
 ## Changelog
+
+3.4.1 - Nov 24, 2019 
+- Excel Export Type updated for new PHP lib, thanks [@adibaby](https://github.com/adibaby)!
+- Bug fix for SocialSecurityNumber, courtesy of [@guzzisti](https://github.com/guzzisti). 
+- https://github.com/benkeen/generatedata/milestone/26?closed=1
+
+3.4.0 - Nov 16, 2019
+- Misc updates, 
+- new inject SQL feature added. Great work, [@harish81](https://github.com/harish81)!
+- https://github.com/benkeen/generatedata/milestone/25?closed=1
+
+3.3.1 - July 18, 2019
+- https://github.com/benkeen/generatedata/milestone/23?closed=1
+
+3.3.0 - July 1, 2019
+- misc bug fixes
 
 3.2.8 - Sep 12, 2017
 - misc bug fixes
